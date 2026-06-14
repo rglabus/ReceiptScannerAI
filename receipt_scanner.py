@@ -9,14 +9,6 @@ st.set_page_config(page_title="ScanerAI", page_icon="🧾")
 # Konfiguracja klienta
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
-# --- TUTAJ WKLEJ TEN KOD TESTOWY ---
-st.subheader("Debugowanie modeli:")
-try:
-    models = [m.name for m in genai.list_models() if 'generateContent' in m.supported_generation_methods]
-    st.write("Dostępne modele:", models)
-except Exception as e:
-    st.error(f"Błąd przy pobieraniu listy modeli: {e}")
-    
 # model = genai.GenerativeModel('gemini-1.5-pro')
 model = genai.GenerativeModel('gemini-flash')
 
