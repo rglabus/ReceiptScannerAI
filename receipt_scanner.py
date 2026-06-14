@@ -60,10 +60,9 @@ if img_file:
 
         # Wywołanie modelu
         # Dlaczego: Gemini 3 Flasch jest ultra szybki i tani. Idealny do prostych zadań OCR.
-        response = client.models.generate_content(
-            model='gemini-3-flash', 
-            contents=[prompt,image_data],
-            config={'reponse_mime_type':'application/json'}
+        model = genai.GenerativeModel('gemini-1.5-flash')
+            response = model.generate_content(
+            contents=[prompt, image_data]
         )
     # Parsujemy odpowiedź jako JSON
     try: 
