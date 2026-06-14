@@ -6,7 +6,9 @@ import sqlite3
 # krok 1 konfiuracja klienta gemini 
 # dlaczego uzywamy nowej biblioteki google genai? (jest to standard w 2026)
 # api key pobieramy z funkcjonalnościa "secrets" aby nie poblikować go publicznie
-client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
+# client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 
 # krok 2 funkcja bazy danych - tworzymy lub łączymy się z bazą danych SQLite
