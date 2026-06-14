@@ -1,5 +1,5 @@
 import streamlit as st
-from google import google.generativeai as genai
+import google.generativeai as genai
 import json
 import sqlite3
 
