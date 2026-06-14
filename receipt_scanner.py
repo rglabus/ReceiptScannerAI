@@ -9,6 +9,7 @@ import sqlite3
 # client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel('gemini-1.5-flash')
+        response = model.generate_content(...)
 
 
 # krok 2 funkcja bazy danych - tworzymy lub łączymy się z bazą danych SQLite
